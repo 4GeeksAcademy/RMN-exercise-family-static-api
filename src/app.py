@@ -38,6 +38,20 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
+
+
+@app.route('/members/<int:id>', methods=['GET'])
+def get_member(id):
+
+    
+    members = jackson_family.get_member()
+ 
+
+    return jsonify(member), 200
+
+
+
+
 # this only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':
     PORT = int(os.environ.get('PORT', 3000))
