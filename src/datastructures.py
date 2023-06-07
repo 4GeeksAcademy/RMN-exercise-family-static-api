@@ -30,7 +30,7 @@ class FamilyStructure:
                 break
 
 
-    def update_member(self, id, member): #cambiar
+    def update_member(self, id, member): #necesita un cambio
         for member in self._members:
             if member['id'] == id:
                 member.update(member)
