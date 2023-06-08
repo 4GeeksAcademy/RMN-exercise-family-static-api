@@ -29,18 +29,18 @@ class FamilyStructure:
                 self._members.remove(member)
                 break
 
-
+"""
     def update_member(self, id, member): #necesita un cambio
         for member in self._members:
             if member['id'] == id:
                 member.update(member)
-                break
+                break"""
 
     def get_member(self, id):
         for member in self._members:
             if member['id'] == id:
                 return member
-            return None
+        return None
        
 
     # this method is done, it returns a list with all the family members

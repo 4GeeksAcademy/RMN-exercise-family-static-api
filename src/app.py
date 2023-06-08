@@ -37,7 +37,7 @@ def get_all_members():
 
 @app.route('/members/<int:id>', methods=['GET'])
 def get_member(id):    
-    members = jackson_family.get_member(id)
+    member = jackson_family.get_member(id)
     return jsonify(member), 200
 
 
@@ -49,10 +49,36 @@ def add_member():
 
 
 @app.route('/members/<int:member_id>', methods=['DELETE'])
-def delete_member(id)
+def delete_member(id):
     jackson_family.delete_member(id)
     return jsonify({"eliminado":True}),200
 
+
+jackson_family.add_member({ 
+  "name": "John Jackson",
+  "age": 33,
+  "luckyNumbers": [7, 13, 22]
+},)
+
+jackson_family.add_member({ 
+    "name": "Jane Jackson",
+    "age": 35,
+    "luckyNumbers": [10, 14, 3]
+    })
+
+jackson_family.add_member({ 
+    "name": "Jimmy Jackson",
+    "age": 5,
+    "luckyNumbers": [1]
+    })
+
+jackson_family.add_member({ 
+    "name": "Ecko Jackon",
+    "age": 5,
+    "luckyNumbers": [7]
+    })
+jackson_family.get_all_members()
+jackson_family.get_member(98715730)
 
 
 
@@ -60,3 +86,5 @@ def delete_member(id)
 if __name__ == '__main__':
     PORT = int(os.environ.get('PORT', 3000))
     app.run(host='0.0.0.0', port=PORT, debug=True)
+
+
